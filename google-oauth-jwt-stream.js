@@ -69,7 +69,7 @@ export class Token {
           let token = JSON.parse(json)
 
           "error" in token
-            ? cb("error", new Error(token.error_description))
+            ? cb(new Error(token.error_description))
             : cb(null, token)
         }
 
