@@ -4,7 +4,7 @@ import assert from "assert"
 import {Token} from "./google-oauth-jwt-stream"
 
 let email = process.env.GOOGLE_OAUTH_EMAIL
-let key = process.env.GOOGLE_OAUTH_KEY
+let key = Buffer(process.env.GOOGLE_OAUTH_KEY, "base64")
 
 let scopes = ["https://spreadsheets.google.com/feeds"]
 let options = {ttl: 10 * 1000, pad: 1000}
