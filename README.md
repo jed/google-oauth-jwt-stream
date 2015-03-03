@@ -10,7 +10,7 @@ Example
 import fs from "fs"
 import {Token} from "google-oauth-jwt-stream"
 
-let email = "xxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx@developer.gserviceaccount.com"
+let email = "xxx...xxx@developer.gserviceaccount.com"
 let key = fs.createReadStream("./key.pem")
 
 let scopes = ["https://spreadsheets.google.com/feeds"]
