@@ -1,0 +1,15 @@
+{
+  "name": "google-oauth-jwt-stream",
+  "version": "1.0.0",
+  "description": "A readable stream of OAuth access tokens for use with Google APIs",
+  "author": "Jed Schmidt (http://jed.is)",
+  "scripts": {
+    "build": "babel google-oauth-jwt-stream.js > index.js",
+    "test": "babel-node test.js",
+    "prepublish": "npm run build"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^4.6.5"
+  }
+}
