@@ -7,8 +7,8 @@ An [io.js][] [readable stream][] of [OAuth access tokens][] for use with [Google
 
 There are already several libraries that can generate Google service tokens, but I wanted one that:
 
-- Allows keys to be streamed in, so you don't have to tie your app to a filesystem paths or make it async.
-- Allows tokens to be streamed out, so that you don't have to build authorization failure detection and token refresh logic into your app.
+- Allows keys to be streamed in, so that you don't have to tie your app to a filesystem path or make it async.
+- Allows tokens to be streamed out, so that you don't have to detect authorization failure or refresh tokens in your app.
 - Makes the most of stable core runtime libraries.
 
 Example
