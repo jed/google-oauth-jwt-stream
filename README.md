@@ -1,6 +1,8 @@
 google-oauth-jwt-stream
 =======================
 
+[![Build Status](https://travis-ci.org/jed/google-oauth-jwt-stream.svg)](https://travis-ci.org/jed/google-oauth-jwt-stream)
+
 An [io.js][] [readable stream][] of [OAuth access tokens][] for use with [Google APIs][].
 
 There are already several libraries that can generate Google service tokens, but I wanted one that:
