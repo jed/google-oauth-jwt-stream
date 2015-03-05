@@ -18,6 +18,25 @@ export class Token {
     this.pad = options.pad || 60000 // refresh 1m before expiration
   }
 
+  get(cb) {
+    let now = Date.now()
+
+    if (this.cached && this.cached.expiresAt < now) {
+      return setImmediate(cb, null, this.cached.value)
+    }
+
+    this.fetch((err, token) => {
+      if (err) return cb(err)
+
+      this.cached = {
+        value: token,
+        expiresAt: now + (token.expires_in * 1000) - this.pad
+      }
+
+      cb(null, token)
+    })
+  }
+
   fetch(cb) {
     if (typeof this.key._read == "function") {
       let key = ""
