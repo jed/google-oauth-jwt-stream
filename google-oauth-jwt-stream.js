@@ -21,7 +21,7 @@ export class Token {
   get(cb) {
     let now = Date.now()
 
-    if (this.cached && this.cached.expiresAt < now) {
+    if (this.cached && now < this.cached.expiresAt) {
       return setImmediate(cb, null, this.cached.value)
     }
 
