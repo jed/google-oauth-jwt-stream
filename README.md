@@ -3,7 +3,7 @@ google-oauth-jwt-stream
 
 [![Build Status](https://travis-ci.org/jed/google-oauth-jwt-stream.svg)](https://travis-ci.org/jed/google-oauth-jwt-stream)
 
-An [io.js][] [readable stream][] of [OAuth access tokens][] for use with [Google APIs][].
+An endless supply of fresh [OAuth access tokens][] for use with [Google APIs][].
 
 There are already several libraries that can generate Google service tokens, but I wanted one that:
 
@@ -58,9 +58,12 @@ Returns a token given the following parameters:
 
 ### let stream = token.createReadStream()
 
-Returns a readable object stream of tokens.
+Returns a [readable stream][] of tokens. Note that since this requires a `setTimeout` to keep the stream open, your process will not terminate implicitly.
 
-[io.js]: https://iojs.org/
+### token.fetch(callback)
+
+Executes `callback` with `(err, token)`, and caches tokens so that all subsequent calls return the same token. Token refresh is performed automatically.
+
 [readable stream]: https://iojs.org/api/stream.html#stream_class_stream_readable
 [OAuth access tokens]: http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html
 [Google APIs]: https://console.developers.google.com
