@@ -40,7 +40,7 @@ Installation
 Setup
 -----
 
-Follow [steps 1 through 6][] to get your service's email and key.
+See the [SETUP](https://github.com/jed/google-oauth-jwt-stream/blob/master/SETUP.md) file.
 
 API
 ---
