@@ -88,7 +88,7 @@ export class Token {
           let token = JSON.parse(json)
 
           "error" in token
-            ? cb(new Error(token.error_description))
+            ? cb(new Error(`Token error: ${token.error}`))
             : cb(null, token)
         }
 
