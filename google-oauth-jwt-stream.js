@@ -62,9 +62,7 @@ export class Token {
     }
 
     let data = [JWT_HEADER, claims]
-      .map(JSON.stringify)
-      .map(Buffer)
-      .map(x => x.toString("base64"))
+      .map(x => Buffer(JSON.stringify(x)).toString("base64"))
       .join(".")
 
     let sig = createSign("RSA-SHA256")
