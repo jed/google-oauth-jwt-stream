@@ -4,3 +4,7 @@ index.js
 *.log
 
 key.pem
+
+email.txt
+
+key.pem.base64

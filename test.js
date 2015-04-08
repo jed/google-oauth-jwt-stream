@@ -3,11 +3,13 @@ import assert from "assert"
 
 import {Token} from "./google-oauth-jwt-stream"
 
-let key
-try { key = Buffer(process.env.GOOGLE_OAUTH_KEY, "base64") }
-catch (e) { key = fs.readFileSync("./key.pem") }
+let key =
+  process.env.GOOGLE_OAUTH_KEY ||
+  Buffer(fs.readFileSync("./key.pem.base64", "utf8"), "base64")
 
-let email = process.env.GOOGLE_OAUTH_EMAIL
+let email =
+  process.env.GOOGLE_OAUTH_EMAIL ||
+  fs.readFileSync("./email.txt", "utf8").trim()
 
 let scopes = ["https://spreadsheets.google.com/feeds"]
 let options = {ttl: 10 * 1000, pad: 1000}
