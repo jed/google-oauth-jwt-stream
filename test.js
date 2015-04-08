@@ -3,9 +3,10 @@ import assert from "assert"
 
 import {Token} from "./google-oauth-jwt-stream"
 
-let key =
+let key = Buffer(
   process.env.GOOGLE_OAUTH_KEY ||
-  Buffer(fs.readFileSync("./key.pem.base64", "utf8"), "base64")
+  fs.readFileSync("./key.pem.base64", "utf8")
+, "base64")
 
 let email =
   process.env.GOOGLE_OAUTH_EMAIL ||
