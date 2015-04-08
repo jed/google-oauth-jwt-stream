@@ -1,6 +1,6 @@
 {
   "name": "google-oauth-jwt-stream",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A readable stream of OAuth access tokens for use with Google APIs",
   "author": "Jed Schmidt (http://jed.is)",
   "scripts": {
